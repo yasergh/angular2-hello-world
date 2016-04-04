@@ -1,4 +1,4 @@
-## angular2-seed
+## Angular2 Hello World
 
 A simple starter project demonstrating the basic concepts of Angular 2.
 
