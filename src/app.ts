@@ -1,14 +1,14 @@
-import {bootstrap} from 'angular2/platform/browser';
-import {provide} from 'angular2/core';
-import {HTTP_PROVIDERS} from 'angular2/http';
-import {ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from 'angular2/router';
 
-import {SeedApp} from './app/seed-app';
+import {bootstrap} from "angular2/bootstrap";
+import {Component} from "angular2/core";
+import {TodoInput} from "./todo-input";
+import {TodoService} from "./todo-service";
 
-
-bootstrap(SeedApp, [
-  HTTP_PROVIDERS,
-  ROUTER_PROVIDERS,
-  provide(LocationStrategy, {useClass: HashLocationStrategy})
-])
-.catch(err => console.error(err));
+@Component({
+  selector:"app",
+  directives:[TodoInput],
+  template:`<div><todo-input></todo-input></div>`
+})
+class App{}
+bootstrap(App,[TodoService])
+  .catch(err => console.error(err));
